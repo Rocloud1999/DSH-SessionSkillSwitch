@@ -1,10 +1,51 @@
 {
-  "name": "dsh-session-skill-switch",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@rocloud1999/dsh-session-skill-switch",
+  "version": "1.0.0",
+  "description": "Per-session common and optional skill selection for DeepSeek Harness, with a native configuration UI and guarded loader.",
   "type": "module",
-  "description": "Session-scoped skill selection policy core; not an installable DSH plugin bundle.",
-  "exports": "./src/policy.mjs",
-  "scripts": { "test": "node --test" },
-  "engines": { "node": ">=20" }
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rocloud1999/DSH-SessionSkillSwitch.git"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./policy": "./src/policy.mjs",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "src/*.mjs",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE",
+    "docs/*.md"
+  ],
+  "scripts": {
+    "test": "node scripts/test.mjs",
+    "check": "node scripts/check.mjs",
+    "verify": "npm run check && npm test",
+    "pack:check": "npm pack --dry-run"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
 }

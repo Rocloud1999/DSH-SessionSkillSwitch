@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Session Skill Switch",
+    "description": "Choose common and optional skills before a session starts. Unselected descriptions stay out of the model catalog and unselected skill calls are blocked."
+  }
+}

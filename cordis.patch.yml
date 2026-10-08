@@ -1,0 +1,7 @@
+- insert:
+    - id: rocloud1999-session-skill-switch
+      name: '@rocloud1999/dsh-session-skill-switch'
+      config:
+        commonSkills: []
+        optionalSkills: []
+        catalogDescriptionMaxLength: 500
