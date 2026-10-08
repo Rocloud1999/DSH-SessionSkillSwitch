@@ -1,0 +1,10 @@
+{
+  "name": "dsh-session-skill-switch",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Session-scoped skill selection policy core; not an installable DSH plugin bundle.",
+  "exports": "./src/policy.mjs",
+  "scripts": { "test": "node --test" },
+  "engines": { "node": ">=20" }
+}
